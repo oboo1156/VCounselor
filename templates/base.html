@@ -1,0 +1,81 @@
+<!-- base.html -->
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Your Counseling Website</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <header>
+        <!-- Your header content goes here -->
+        <nav>
+            <ul>
+                <li><a href="{%url 'counsel:home' %}">Home</a></li>
+                <li><a href="{%url 'counsel:create_story'%}">Share Story➕</a></li>
+                <li><a href="{%url 'counsel:counsellor'%}">Counsellors</a></li>
+                <li><a href="https://huggingface.co/spaces/Obook156/VCounsellor" target="_blank">VCounselor's AI</a></li>
+
+                <!-- Add more links to other pages in the navigation bar -->
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="sidebar-left">
+                <h3>Alternative Navigation</h3>
+                <ul>
+                    <li><a href="{%url 'counsel:home' %}">Home</a></li>
+                    <li><a href="{%url 'counsel:create_story'%}">Share Story➕</a></li>
+                    <li><a href="{%url 'counsel:counsellor' %}">Counsellors</a></li>
+                    <li><a href="https://huggingface.co/spaces/Obook156/VCounsellor" target="_blank">VCounselor's AI</a></li>
+
+                    <!-- Add more links to other pages in the left sidebar -->
+                </ul>
+                    <!-- Motivational sticky note -->
+                <div class="motivational-note">
+                    <p>KNUST Counselling Centre. Your Safe Haven</p>
+                </div>
+            </div>
+
+            <div class="content">
+                <!-- Include the content from child templates -->
+                {% block content %}
+                {% endblock %}
+            </div>
+
+            <div class="sidebar-right">
+                <h3> Communique</h3>
+                <!-- Add your flyer and ad content here -->
+                <div class="flyer">
+                    <img src="{% static 'images/counsel_flyer.jpg' %}" alt="flyer">
+                    <img src="{% static 'images/counsel_flyer.jpg' %}" alt="flyer">
+                    <img src="{% static 'images/counsel_flyer.jpg' %}" alt="flyer">
+                    <img src="{% static 'images/counsel_flyer.jpg' %}" alt="flyer">
+                    <img src="{% static 'images/counsel_flyer.jpg' %}" alt="flyer">
+                    <img src="{% static 'images/counsel_flyer.jpg' %}" alt="flyer">
+                    <img src="{% static 'images/counsel_flyer.jpg' %}" alt="flyer">
+
+
+
+                    <p>This is an upcoming health talk program, which will be held in COS and we entreat you all to come.
+                    Thank you</p>
+                </div>
+                <p>Hope to see you there😍</p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <!-- Your footer content goes here -->
+        <p>&copy; 2023 Counseling Website. All rights reserved.</p>
+    </footer>
+
+    <!-- Your JavaScript files -->
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+
+</body>
+</html>

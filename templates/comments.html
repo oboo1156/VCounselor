@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+    {{client}}
+<p>
+    <form method="POST" action="{% url 'counsel:comment' pk=client.id%}">
+    {% csrf_token %} <!--id is need above-->
+    {{ form.as_p }}
+    <button type="submit">Submit</button>
+</form>
+    </p>
+<p>
+<ul>
+    {% for comment in comments %}
+    <li>{{comment}} <a href="{%url 'counsel:comment_reply' pk=comment.id%}"> Reply </a> </li>
+    {%endfor%}
+</ul>
+</p>
+
+{% endblock %}

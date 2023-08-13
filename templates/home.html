@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+    <div class="stories">
+        {% for story in stories %}
+            <div class="story-box">
+                <div class="story-header">
+                    <img class="user-pic" src="{% if story.image %}{{ story.image.url }}
+                    {%else%} {% static 'images/animation002.jpeg' %} {% endif %}">
+                    <h2  class="user-name"> {%if story.nick_name%} {{story.nick_name}} {%else%} anonymous {%endif%} </h2>
+                    <p class="story-datetime">{{ story.date}}</p>
+                </div>
+                <p class="story">{{ story.story}}</p>
+                <button class="btn-comment"><a href="{%url 'counsel:comment' pk=story.id %}"> Comment</a></button>
+                <button class="btn-like">Like</button>
+                <button class="btn-share">Share</button>
+                <button class="btn-like"><a href="{%url 'counsel:delete_story' story.id %}"> Delete Post </a> </button>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
+
+
+
+
+

@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+{{comment}}
+
+<p>
+    <form method="POST" action="{% url 'counsel:comment_reply' pk=comment.id%}">
+    {% csrf_token %} <!--id is need above-->
+    {{ form.as_p }}
+    <button type="submit">Submit</button>
+</form>
+    </p>
+
+<ul>
+    {% for comment_reply in comment_replies %}
+<li>
+    {{comment_reply}}
+</li>
+    {%endfor%}
+</ul>
+
+{% endblock content %}

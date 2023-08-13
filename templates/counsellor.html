@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="counselor-info">
+        {% for counselor in counsellors %}
+            <div class="counselor-box">
+                <div class="counselor-img">
+                    <img src="{{ counselor.profile_picture.url }}" alt="{{ counselor.name }}">
+                </div>
+                <div class="counselor-details">
+                    <h2>{{ counselor.name }}</h2>
+                    <p>{{ counselor.contact }}</p>
+                    <p>Email: {{ counselor.email }}</p>
+                    <p>WhatsApp: {{ counselor.whatsapp }}</p>
+                    <p>Social Media: {{ counselor.twitter }}</p>
+                    <p>Website: {{ counselor.website }}</p>
+                    <p>College: {{ counselor.college }}</p>
+                    <p>Star Review: {{ counselor.reviews }}</p>
+                </div>
+            </div>
+        {% endfor %}
+</div>
+
+{% endblock %}

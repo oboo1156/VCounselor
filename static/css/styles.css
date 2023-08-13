@@ -1,0 +1,204 @@
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+}
+
+main {
+    padding: 20px;
+}
+
+.container {
+    display: flex;
+    height: 100vh; /* Make the container fill the full height of the viewport */
+    margin: 0 auto; /* Center the container horizontally */
+}
+/*  left */
+.sidebar-left {
+    flex: 1;
+    padding: 20px;
+    background-color: #f0f0f0;
+    border-right: 1px solid #ccc;
+    position: relative; /* Ensure the sticky note is positioned relative to the sidebar */
+}
+
+
+.motivational-note {
+    position: absolute;
+    bottom: 10px; /* Adjust this value to position the sticky note from the bottom */
+    left: 10px; /* Adjust this value to position the sticky note from the left */
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+}
+
+.motivational-note p {
+    margin: 0;
+    font-size: 14px;
+    text-align: center;
+}
+
+
+.content {
+    flex: 4;
+    padding: 20px;
+}
+
+/* Add this CSS to styles.css */
+.sidebar-right {
+    flex: 1;
+    padding: 20px;
+    background-color: #f0f0f0;
+    border-left: 1px solid #ccc;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.sidebar-left,
+.sidebar-right {
+    padding: 20px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    overflow-y: auto; /* Add scrollbars if content overflows */
+}
+
+.flyer-container {
+    max-height: calc(100vh - 100px); /* Adjust this value as needed */
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.flyer {
+    margin: 10px 0;
+    text-align: center;
+}
+
+.flyer img {
+    max-width: 100%;
+    height: auto;
+}
+
+
+
+.stories {
+    display: flex;
+    flex-direction: column;
+}
+
+.story-box {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px 0;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.story-box:hover {
+    transform: translateY(-5px);
+}
+
+.story-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.user-pic {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.user-name {
+    margin: 0;
+}
+
+.story-datetime {
+    margin: 0;
+    font-size: 12px;
+    color: #999;
+}
+
+.btn-comment,
+.btn-like,
+.btn-share {
+    margin-right: 10px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: background-color 0.
+}
+
+
+/* Add this CSS to styles.css */
+.counselor-info {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.counselor-box {
+    width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.counselor-box:hover {
+    transform: translateY(-5px);
+}
+
+.counselor-img img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.counselor-details h2 {
+    margin: 0;
+}
+
+.counselor-details p {
+    margin: 5px 0;
+}
