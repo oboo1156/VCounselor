@@ -1,4 +1,5 @@
 from django.db import models
+from phonenumber_field.modelfields import PhoneNumberField
 
 Hashtag = (
     ('education', 'educative'),
@@ -27,14 +28,15 @@ Hashtagg = (
 class Counsellor(models.Model):
     name = models.CharField(max_length=100, null=True)
     image = models.ImageField(upload_to='counsellor/%Y/%m/%d', null=True)
-    contact = models.IntegerField(null=True)
+    contact = PhoneNumberField(null=True)
+    whatsapp = models.URLField(null=True)
     text = models.TextField(null=True) #short description about them
-    twitter = models.TextField(null=True)
-    instagram = models.TextField(null=True)
-    website = models.TextField(null=True)
+    twitter = models.URLField(null=True)
+    meet = models.URLField(null=True)
+    website = models.URLField(null=True)
     reviews = models.IntegerField(null=True)
     date = models.DateField(null=True, auto_now_add=True)
-    story = models.TextField(null=True)#counsellors advice to us or story to share. its is part of their details. counsellors
+    #story = models.TextField(null=True)#counsellors advice to us or story to share. its is part of their details. counsellors
     #college = models.TextField(null=True)
     #will act like they are sharing their story and it will appear as ListView on Advice Link
 

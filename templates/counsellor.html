@@ -1,21 +1,22 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block content %}
     <div class="counselor-info">
         {% for counselor in counsellors %}
             <div class="counselor-box">
                 <div class="counselor-img">
-                    <img src="{{ counselor.profile_picture.url }}" alt="{{ counselor.name }}">
+                    <img src="{{ counselor.image.url }}" alt="{{ counselor.name }}">
                 </div>
                 <div class="counselor-details">
-                    <h2>{{ counselor.name }}</h2>
-                    <p>{{ counselor.contact }}</p>
-                    <p>Email: {{ counselor.email }}</p>
-                    <p>WhatsApp: {{ counselor.whatsapp }}</p>
-                    <p>Social Media: {{ counselor.twitter }}</p>
-                    <p>Website: {{ counselor.website }}</p>
-                    <p>College: {{ counselor.college }}</p>
-                    <p>Star Review: {{ counselor.reviews }}</p>
+                    <h2>{{ counselor.name }}</h2> </br>
+                    <p><b>Let's Chat:</b> <a href="{{ counselor.whatsapp }}" target="_blank">Lets get interactive here </a></p> </br>
+                    <p><b>Call:</b> <a href="tel:{{ counselor.contact }}">Call me and let's talk</a></p> </br>
+                    <p><b>Social Media:</b> <a href="{{ counselor.twitter }}" target="_blank">Follow me on twitter </a></p> </br>
+                    <p><b></b>Website:</b> <a href="{{ counselor.website }}" target="_blank">Learn more about me </a></p> </br>
+                    <p><b></b>Google Meet:</b> <a href="{{ counselor.meet }}" target="_blank">We can arrange a meeting here </a></p> </br>
+                    <p><b>College:</b> {{ counselor.text }}</p> </br>
+                    <p><b>Star Review:</b> {{ counselor.reviews }}</p> </br>
                 </div>
             </div>
         {% endfor %}

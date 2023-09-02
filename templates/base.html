@@ -13,9 +13,10 @@
         <nav>
             <ul>
                 <li><a href="{%url 'counsel:home' %}">Home</a></li>
-                <li><a href="{%url 'counsel:create_story'%}">Share Story➕</a></li>
-                <li><a href="{%url 'counsel:counsellor'%}">Counsellors</a></li>
-                <li><a href="https://huggingface.co/spaces/Obook156/VCounsellor" target="_blank">VCounselor's AI</a></li>
+                <li><a href="{%url 'counsel:create_story'%}">Share with Friends➕</a></li>
+                <li><a href="{%url 'counsel:counsellor'%}">Talk to Counsellors</a></li>
+                <li><a href="https://huggingface.co/spaces/Obook156/VCounsellor" target="_blank">Talk to a LadyBot</a></li> </br>
+                <li><a href="https://www.llama2.ai/" target="_blank">Talk to PapaBot</a></li> </br>
 
                 <!-- Add more links to other pages in the navigation bar -->
             </ul>
@@ -27,11 +28,19 @@
             <div class="sidebar-left">
                 <h3>Alternative Navigation</h3>
                 <ul>
-                    <li><a href="{%url 'counsel:home' %}">Home</a></li>
-                    <li><a href="{%url 'counsel:create_story'%}">Share Story➕</a></li>
-                    <li><a href="{%url 'counsel:counsellor' %}">Counsellors</a></li>
-                    <li><a href="https://huggingface.co/spaces/Obook156/VCounsellor" target="_blank">VCounselor's AI</a></li>
-
+                    <li><a href="{%url 'counsel:home' %}">Home</a></li> </br>
+                    <li><a href="{%url 'counsel:create_story'%}">Share with Friends➕</a></li> </br>
+                    <li><a href="{%url 'counsel:counsellor' %}">Talk to Counsellors</a></li> </br>
+                    <li><a href="https://huggingface.co/spaces/Obook156/VCounsellor" target="_blank">Talk to a LadyBot</a></li> </br>
+                    <li><a href="https://www.llama2.ai/" target="_blank">Talk to a PapaBot</a></li> </br>
+                    <li>{% if user.is_authenticated %}
+                            Hello, {{ user.username }} </br>
+                            <a href="{% url 'users:logout' %}">Log out</a>
+                        {% else %}</br>
+                        <a href="{% url 'users:register' %}">Register</a> -
+                    <a href="{% url 'users:login' %}">Log in</a>
+                        {% endif %}
+                    </li>
                     <!-- Add more links to other pages in the left sidebar -->
                 </ul>
                     <!-- Motivational sticky note -->
@@ -51,12 +60,11 @@
                 <!-- Add your flyer and ad content here -->
                 <div class="flyer">
                     <img src="{% static 'images/counsel_flyer.jpg' %}" alt="flyer">
-                    <img src="{% static 'images/counsel_flyer.jpg' %}" alt="flyer">
-                    <img src="{% static 'images/counsel_flyer.jpg' %}" alt="flyer">
-                    <img src="{% static 'images/counsel_flyer.jpg' %}" alt="flyer">
-                    <img src="{% static 'images/counsel_flyer.jpg' %}" alt="flyer">
-                    <img src="{% static 'images/counsel_flyer.jpg' %}" alt="flyer">
-                    <img src="{% static 'images/counsel_flyer.jpg' %}" alt="flyer">
+                    <img src="{% static 'images/counsellingpage1.jpeg' %}" alt="flyer">
+                    <img src="{% static 'images/counsellingpage2.jpeg' %}" alt="flyer">
+                    <img src="{% static 'images/counsellingpage3.jpeg' %}" alt="flyer">
+                    <img src="{% static 'images/counsellingpage4.jpeg' %}" alt="flyer">
+                    <img src="{% static 'images/counsellingpage6.jpeg' %}" alt="flyer">
 
 
 

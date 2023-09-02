@@ -1,9 +1,12 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from .forms import ClientForm, CommentForm, CommentReplyForm
 from .models import Client, Comment, CommentReply, Counsellor
-from django.http import Http404
+from django.contrib.auth.decorators import login_required
+
+#from django.http import Http404
 
 
+@login_required
 def home(request):
     stories = Client.objects.all()
     return render(request, 'home.html', {'stories': stories})
@@ -14,6 +17,7 @@ def counsellor(request):
     return render(request, 'counsellor.html', {'counsellors': counsellors})
 
 
+@login_required
 def create_story(request):
     if request.method == "POST":
         form = ClientForm(request.POST)
@@ -25,6 +29,7 @@ def create_story(request):
     return render(request, "create_story.html", {'form': form})
 
 
+@login_required
 def comment(request, pk):
     client = get_object_or_404(Client, id=pk)
     comments = Comment.objects.filter(client=client)
@@ -61,6 +66,7 @@ def comment_reply(request, pk):
     return render(request, 'comment_reply.html', context)
 
 
+@login_required
 def delete_story(request, pk):
     story = get_object_or_404(Client, id=pk)
     # if story.owner != request.user:
