@@ -12,9 +12,4 @@
 
 **Accessing the website on your local machine:**
 1. `python manage.py runserver`
-Then you click on the link that follows ie ==http://127.0.0.1:8000==
-
-
----
-
-## nb: this project has the libraries and requirements already installed on the virtual environment(venv) so just activate it(step 2). Then go ahead and access the website following step5.**
+Then you click on the link that follows ie ==Http://127.0.0.1:8000==
