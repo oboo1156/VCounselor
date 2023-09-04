@@ -34,9 +34,9 @@ main {
 
 .container {
     display: flex;
-    height: 100vh; /* Make the container fill the full height of the viewport */
-    margin: 0 auto; /* Center the container horizontally */
+    flex: 1; /* This ensures that the container grows to fill the available vertical space */
 }
+
 /*  left */
 .sidebar-left {
     flex: 1;
@@ -82,9 +82,9 @@ main {
     align-items: center;
 }
 
-
 .sidebar-left,
 .sidebar-right {
+    flex-grow: 1; /* Allow sidebars to grow and fill the available space */
     padding: 20px;
     background-color: #f0f0f0;
     border: 1px solid #ccc;

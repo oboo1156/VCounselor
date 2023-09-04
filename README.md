@@ -12,4 +12,4 @@
 
 **Accessing the website on your local machine:**
 1. `python manage.py runserver`
-Then you click on the link that follows ie ==Http://127.0.0.1:8000==
+Then you click on the link that follows ie ***http://127.0.0.1:8000***
